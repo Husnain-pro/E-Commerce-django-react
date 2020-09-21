@@ -7,7 +7,7 @@ import FeatureProduct from './ProfileProducts/FeatureProduct'
 import OfferProduct from './ProfileProducts/OfferProduct'
 import Testimonial from './ProfileProducts/Testimonial'
 import './style.css';
-const Profile = () => {
+const Profile = ({feature}) => {
     return (
         <div>
             <div className="Profile__container">
@@ -19,6 +19,7 @@ const Profile = () => {
                         will come.
                     </p>
                         <a href="" className="btn">Explore Now &#8594;</a>
+                        
                     </div>
                     <div className="col-2">
                         <img src={image1} alt="image" />
@@ -46,7 +47,7 @@ const Profile = () => {
 
             {/* -------- feature products ------------ */}
            
-            <FeatureProduct></FeatureProduct>
+            <FeatureProduct feature={feature}></FeatureProduct>
 
             {/* ----------- Offer ------------- */}
             <OfferProduct></OfferProduct>

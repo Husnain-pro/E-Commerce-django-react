@@ -9,7 +9,7 @@ const Navbar = () => {
             <div className="container">
                 <div className="navbar">
                     <div className="logo">
-                        <img src={logo} alt="logo" style={{ width: "125px" }} onClick={menuToggle}/>
+                        <img src={logo} alt="logo" style={{ width: "125px" }} />
                         <img src={menu} alt="cart" className="menu-icon" ></img>
                     </div>
                     <nav>

@@ -41,6 +41,7 @@ p{
 .Profile__container{
     max-width: 100%;
     margin: auto;
+    height: 88vh;
     background:radial-gradient(#fff,#ffd6d6);
     padding-left: 75px;
     padding-right: 45px;
@@ -113,6 +114,8 @@ col-2 > h1{
 }
 .col-4 > img{
     width: 100%;
+    min-height: 310px;
+    min-width: 240px;
 }
 .title{
     text-align: center;
