@@ -4,10 +4,12 @@ import category_2 from './RedStore_Img/images/category-2.jpg';
 import category_3 from './RedStore_Img/images/category-3.jpg';
 import image1 from './RedStore_Img/images/image1.png';
 import FeatureProduct from './ProfileProducts/FeatureProduct'
+import LatestProduct from './ProfileProducts/LatestProduct'
 import OfferProduct from './ProfileProducts/OfferProduct'
 import Testimonial from './ProfileProducts/Testimonial'
+
 import './style.css';
-const Profile = ({feature}) => {
+const Profile = ({feature,latest}) => {
     return (
         <div>
             <div className="Profile__container">
@@ -48,6 +50,10 @@ const Profile = ({feature}) => {
             {/* -------- feature products ------------ */}
            
             <FeatureProduct feature={feature}></FeatureProduct>
+
+            {/* -------- Latest products ------------ */}
+           
+            <LatestProduct latest={latest}></LatestProduct>
 
             {/* ----------- Offer ------------- */}
             <OfferProduct></OfferProduct>
