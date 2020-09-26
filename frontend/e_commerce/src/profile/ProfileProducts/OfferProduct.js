@@ -1,7 +1,9 @@
-import React from 'react'
-import '../style.css'
+import React from 'react';
 import exclusive from '../../profile/RedStore_Img/images/exclusive.png';
-const OfferProduct = () => {
+import '../style.css';
+import { Link } from 'react-router-dom';
+
+const OfferProduct = ({ setSingleTitle, setSinglePrice, setSingleUrl }) => {
     return (
         <div>
             <div className="offer">
@@ -12,7 +14,12 @@ const OfferProduct = () => {
                         </div>
                         <div className="col-2">
                             <p>Exclusively Availbale on HunnyStore</p>
-                            <h1>Smart Band 4</h1>
+                            <Link to="/single_product"><h1 style={{ cursor: "pointer" }} onClick={() => {
+                                setSinglePrice(2299);
+                                setSingleTitle('Smart Band 4');
+                                setSingleUrl(exclusive);
+                            }}>
+                                Smart Band 4</h1></Link>
                             <small>The Mi Smart Band 4 is another solid product in the
                             Mi Band lineup. We loved its display, comfort, and
                             workout tracking accuracy

@@ -9,7 +9,7 @@ import OfferProduct from './ProfileProducts/OfferProduct'
 import Testimonial from './ProfileProducts/Testimonial'
 
 import './style.css';
-const Profile = ({feature,latest}) => {
+const Profile = ({feature,latest, setSingleTitle, setSinglePrice, setSingleUrl}) => {
     return (
         <div>
             <div className="Profile__container">
@@ -49,14 +49,23 @@ const Profile = ({feature,latest}) => {
 
             {/* -------- feature products ------------ */}
            
-            <FeatureProduct feature={feature}></FeatureProduct>
+            <FeatureProduct feature={feature}
+            setSingleTitle={setSingleTitle}
+            setSinglePrice={setSinglePrice} setSingleUrl={setSingleUrl}
+            ></FeatureProduct>
 
             {/* -------- Latest products ------------ */}
            
-            <LatestProduct latest={latest}></LatestProduct>
+            <LatestProduct latest={latest}
+            setSingleTitle={setSingleTitle}
+            setSinglePrice={setSinglePrice} setSingleUrl={setSingleUrl}
+            ></LatestProduct>
 
             {/* ----------- Offer ------------- */}
-            <OfferProduct></OfferProduct>
+            <OfferProduct
+            setSingleTitle={setSingleTitle}
+            setSinglePrice={setSinglePrice} setSingleUrl={setSingleUrl}
+            ></OfferProduct>
 
             {/* --------------testimonial------------- */}
             <Testimonial></Testimonial>

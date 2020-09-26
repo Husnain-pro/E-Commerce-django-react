@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-// import './style.css'
-const Products = ({ products,setUrl }) => {
-    // const [url, setUrl] = useState('')
+import React from 'react';
+import { Link } from 'react-router-dom';
+const Products = ({ products, setUrl, setSingleTitle, setSinglePrice, setSingleUrl }) => {
     function handleChange(e) {
         setUrl(`?ordering=${e.target.value}`)
     }
@@ -22,7 +21,11 @@ const Products = ({ products,setUrl }) => {
                     {products.length > 0 ? products.map((image, index) =>
                         <div class="col-4">
                             <img src={image.dir_url} key={index} alt="" />
-                            <h4 onClick={()=>console.log(image.price)} style={{cursor:"pointer"}}>{image.title}</h4>
+                            <Link to="/single_product"><h4 style={{ cursor: "pointer" }} onClick={() => {
+                                setSinglePrice(image.price);
+                                setSingleTitle(image.title);
+                                setSingleUrl(image.dir_url);
+                            }}>{image.title}</h4></Link>
                             <div class="rating">
                                 <i class="fa fa-star-o" style={{ color: "red" }}></i>
                                 <i class="fa fa-star-o"></i>

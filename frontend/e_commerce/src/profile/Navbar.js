@@ -22,8 +22,7 @@ const Navbar = () => {
                         <ul style={{ maxHeight: `${toggleMenu}px`, zIndex: 100 }}>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/products" >Products</Link></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><Link to="/contact" >Contact</Link></li>
                             <li><Link to="/account" >Account</Link></li>
                         </ul>
                     </nav>
