@@ -11,8 +11,8 @@ body{
     align-items: center;
     padding: 20px;  
 }
-.navbar img{
-    margin-top: 10px;
+.navbar > .responsive{
+    transform: translateY(-17px);
 }
 nav{
     flex: 1;
@@ -213,6 +213,7 @@ small{
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0 20px;
+    
 }
 .footer > p{
     color: #8a8a8a;
@@ -303,6 +304,7 @@ ul{
 select{
     border: 1px solid #ff523b;
     padding: 5px;
+    transform: translateX(80%); 
 }
 select:focus{
     outline: none;
@@ -391,6 +393,9 @@ select:focus{
 }
 
 /* -----------Cart Items Details----------- */
+.cart-container{
+    margin-top: 80px;
+}
 
 .cart-page{
     margin: 80px auto;
@@ -542,5 +547,10 @@ form a{
     }
     .cart-info p{
         display: none;
+    }
+    select{
+        border: 1px solid #ff523b;
+        padding: 5px;
+        transform: translateX(30%); 
     }
 }

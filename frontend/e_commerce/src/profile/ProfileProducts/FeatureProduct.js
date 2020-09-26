@@ -1,15 +1,14 @@
 import React from 'react';
-import '../../profile/style.css';
+// import '../../profile/style.css';
 
 const FeatureProduct = ({ feature }) => {
     return (
         <div>
             {/* -------- feature products ------------ */}
-
             <div className="small-container">
                 <h2 className="title">Featured Products</h2>
                 <div className="row">
-                    {feature.map((image, index) =>
+                    {feature.length > 0 ? feature.map((image, index) =>
                         <div className="col-4">
                             <img src={image.dir_url} key={index} alt="" />
                             <h4>{image.title}</h4>
@@ -22,7 +21,7 @@ const FeatureProduct = ({ feature }) => {
                             </div>
                             <p>${image.price}</p>
                         </div>
-                    )}
+                    ):<h1>Wait a Second.......</h1>}
                 </div>
             </div>
         </div>

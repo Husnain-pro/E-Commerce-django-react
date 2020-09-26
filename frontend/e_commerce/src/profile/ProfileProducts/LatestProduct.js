@@ -7,7 +7,7 @@ const LatestProduct = ({ latest }) => {
             <div className="small-container">
                 <h2 className="title">Latest Products</h2>
                 <div className="row">
-                    {latest.map((image, index) =>
+                    {latest.length > 0?latest.map((image, index) =>
                         <div className="col-4">
                             <img src={image.dir_url} key={index} alt="" />
                             <h4>{image.title}</h4>
@@ -20,7 +20,7 @@ const LatestProduct = ({ latest }) => {
                             </div>
                             <p>${image.price}</p>
                         </div>
-                    )}
+                    ):<h1>Loading........</h1>}
                 </div>
             </div>
         </ div>

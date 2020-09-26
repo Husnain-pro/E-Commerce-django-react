@@ -12,6 +12,9 @@ body{
     align-items: center;
     padding: 20px;   
 }
+.navbar > .responsive{
+    transform: translateY(-17px);
+}
 nav{
     flex: 1;
     text-align: right;
@@ -221,6 +224,7 @@ small{
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0 20px;
+    transform: translateY(80%);
 }
 .footer > p{
     color: #8a8a8a;
@@ -300,6 +304,9 @@ ul{
         display: block;
         cursor: pointer;
     }
+    .navbar > .responsive{
+        transform: translateY(-15px);
+    }
 }
 
 /* -------media query for less than 600 screen size------ */
@@ -311,4 +318,5 @@ ul{
     .col-2,.col-3,.col-4{
         flex-basis: 100%;
     }
+
 }
