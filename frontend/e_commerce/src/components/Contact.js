@@ -1,6 +1,17 @@
 import React from 'react'
 import './contact.css'
+import 'antd/dist/antd.css';
+import { Button, notification, Space } from 'antd';
 const Contact = () => {
+
+    const openNotificationWithIcon = (type,register) => {
+        notification[type]({
+          message: `Notification ${register}` ,
+          description:
+            'We are working on Email or Message Transfer protocol',
+        });
+      };
+
     return (
         <div class="card_container">
             <div class="card">
@@ -27,8 +38,10 @@ const Contact = () => {
                             <label>Message</label>
                         </div>
                     </form>
-                    <button class="form_btn">Contact Now &#8594;</button>
-
+                    {/* <button class="form_btn">Contact Now &#8594;</button> */}
+                    <Space>
+                            <Button style={{marginTop:"10px",marginLeft:"30px"}} onClick={() => openNotificationWithIcon('info','Contact')}>Contact Now &#8594;</Button>
+                    </Space>
                 </div>
                 <div class="card_right">
                     <p>Contact Information</p>
