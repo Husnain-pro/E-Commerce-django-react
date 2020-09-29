@@ -1,10 +1,73 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import defaultImg from '../profile/RedStore_Img/images/category-3.jpg';
 import './style.css';
 
-const SingleProduct = ({ feature, SinglePrice, SingleTitle, SingleUrl, setSingleTitle, setSinglePrice, setSingleUrl }) => {
+const SingleProduct = ({ feature, SinglePrice, SingleTitle, SingleUrl, setSingleTitle, setSinglePrice, setSingleUrl, addToCart }) => {
+
+    const [CartTitle, setCartTitle] = useState('')
+    const [CartPrice, setCartPrice] = useState()
+    const [CartUrl, setCartUrl] = useState('')
+    const [Cartquantity, setCartquantity] = useState()
+
+    const getCookie = (name) => {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+    useEffect(() => {
+        if (CartPrice && CartTitle && CartUrl) {
+            console.log(CartPrice)
+            console.log(CartTitle)
+            console.log(CartUrl)
+
+            const csrftoken = getCookie('csrftoken');
+            const requestOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRFToken': csrftoken
+                },
+                body: JSON.stringify({
+                    title: `${CartTitle}`, price: `${CartPrice}`, dir_url: `${CartUrl}`,
+                    quantity: `${Cartquantity}`
+                })
+            };
+            fetch('http://127.0.0.1:8000/cart/', requestOptions)
+                .then((response) => {
+                    if (!response.ok) {
+                        // error processing
+                        throw 'Error';
+                    }
+                    return response.json()
+                })
+
+        }
+
+    })
+
+    function setCart() {
+        setCartTitle(SingleTitle)
+        setCartPrice(SinglePrice)
+        setCartUrl(SingleUrl)
+        setCartquantity(1)
+    }
+
+
     return (
 
         // <!-- ------------Single_Products_Detail----------->
@@ -15,7 +78,8 @@ const SingleProduct = ({ feature, SinglePrice, SingleTitle, SingleUrl, setSingle
             <div class="small-container">
                 <div class="row">
                     <div class="col-2">
-                        <img src={SingleUrl} id="ProductImg" />
+                        {SingleUrl ? <img src={SingleUrl} id="ProductImg" />
+                            : <img src={defaultImg} id="ProductImg" />}
                     </div>
                     <div class="col-2">
                         <p>Home / T-Shirt</p>
@@ -28,7 +92,7 @@ const SingleProduct = ({ feature, SinglePrice, SingleTitle, SingleUrl, setSingle
                             <span>L</span>
                         </div>
                         <div class="wishList_parent">
-                            <div class="wishList_parent_text">
+                            <div class="wishList_parent_text" onClick={setCart}>
                                 <p><a href="#">ADD TO CART</a></p>
                             </div>
                             <div class="wishList_parent_wish"></div>

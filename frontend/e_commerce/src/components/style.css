@@ -338,9 +338,24 @@ select:focus{
     display: inline-block;
     border: 1px solid #cecece;
     margin: 15px 0 ;
-    padding: 5px 30px 5px;
+    padding: 8px 25px 1px;
     color: #808080;
     background: #eeeeee;
+    cursor: pointer;
+    transition: all .2s;
+}
+.wishList_parent_text>p>a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+}
+.wishList_parent_text:hover{
+    transform: translateY(-2px);
+    background-color: #ccb7b77a;
+}
+.wishList_parent_text:active{
+    transform: translateY(0px);
+    background-color: #ccb7b744;
 }
 .wishList_parent_wish{    
     /* vertical-align: text-top; */
@@ -351,9 +366,7 @@ select:focus{
     padding: 15px;
     align-items: center;
     cursor: pointer;
-    /* margin-top: 25px; */
-    /* border: 1px solid black; */
-    /* background: transparent url('./RedStore_Img/images/heart.png') no-repeat; */
+    background: transparent url("https://img.icons8.com/material-outlined/48/000000/like.png") no-repeat;
     background-size: 20px 20px;
     transition: transform 0.5s;
 }
@@ -365,7 +378,7 @@ select:focus{
     padding: 15px;
     align-items: center;
     top: 2px;
-    /* background: transparent url('./RedStore_Img/images/like.png') no-repeat; */
+    background: transparent url("https://img.icons8.com/material/24/000000/like--v1.png") no-repeat;
     background-size: 20px 20px;
     transform: translateY(-2px);
 }
@@ -377,7 +390,7 @@ select:focus{
     padding: 15px;
     align-items: center;
     top: 2px;
-    /* background: transparent url('./RedStore_Img/images/like.png') no-repeat; */
+    background: transparent url("https://img.icons8.com/material/24/000000/like--v1.png") no-repeat;
     background-size: 20px 20px;
     transform: translateY(2px);
 }

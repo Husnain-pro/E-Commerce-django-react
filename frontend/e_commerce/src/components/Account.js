@@ -1,8 +1,8 @@
-import React,{useState} from 'react'
-import './style.css'
-import image1 from '../../src/profile/RedStore_Img/images/image1.png';
-import 'antd/dist/antd.css';
 import { Button, notification, Space } from 'antd';
+import 'antd/dist/antd.css';
+import React, { useState } from 'react';
+import image1 from '../../src/profile/RedStore_Img/images/image1.png';
+import './style.css';
 const Account = () => {
     
 const openNotificationWithIcon = (type,register) => {

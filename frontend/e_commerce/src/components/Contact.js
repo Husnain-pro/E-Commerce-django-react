@@ -1,7 +1,7 @@
-import React from 'react'
-import './contact.css'
-import 'antd/dist/antd.css';
 import { Button, notification, Space } from 'antd';
+import 'antd/dist/antd.css';
+import React from 'react';
+import './contact.css';
 const Contact = () => {
 
     const openNotificationWithIcon = (type,register) => {

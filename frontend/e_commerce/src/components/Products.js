@@ -43,3 +43,4 @@ const Products = ({ products, setUrl, setSingleTitle, setSinglePrice, setSingleU
 }
 
 export default Products
+
