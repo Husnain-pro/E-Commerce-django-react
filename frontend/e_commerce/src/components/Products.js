@@ -6,8 +6,8 @@ const Products = ({ products, setUrl, setSingleTitle, setSinglePrice, setSingleU
     }
     return (
         <div>
-            <div class="small-container">
-                <div class="row row-2">
+            <div className="small-container">
+                <div className="row row-2">
                     <h2>All Products</h2>
                     <select onChange={handleChange}>
                         <option value="Default">Default Sorting</option>
@@ -17,21 +17,21 @@ const Products = ({ products, setUrl, setSingleTitle, setSinglePrice, setSingleU
                         <option value="sale">Sort By Sale</option>
                     </select>
                 </div>
-                <div class="row">
+                <div className="row">
                     {products.length > 0 ? products.map((image, index) =>
-                        <div class="col-4">
+                        <div className="col-4">
                             <img src={image.dir_url} key={index} alt="" />
                             <Link to="/single_product"><h4 style={{ cursor: "pointer" }} onClick={() => {
                                 setSinglePrice(image.price);
                                 setSingleTitle(image.title);
                                 setSingleUrl(image.dir_url);
                             }}>{image.title}</h4></Link>
-                            <div class="rating">
-                                <i class="fa fa-star-o" style={{ color: "red" }}></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                            <div className="rating">
+                                <i className="fa fa-star-o" style={{ color: "red" }}></i>
+                                <i className="fa fa-star-o"></i>
+                                <i className="fa fa-star-o"></i>
+                                <i className="fa fa-star-o"></i>
+                                <i className="fa fa-star-o"></i>
                             </div>
                             <p>${image.price}</p>
                         </div>

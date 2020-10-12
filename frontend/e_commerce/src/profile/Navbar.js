@@ -27,7 +27,7 @@ const Navbar = () => {
                         </ul>
                     </nav>
                     <Link to="/cart" ><img src={cart} alt="cart" className="responsive" style={{ width: "30px", height: "30px",transform:"translateY(-5px)" }} /></Link>
-                    <img src={menu} alt="cart" class="menu-icon" onClick={menuToggle} />
+                    <img src={menu} alt="cart" className="menu-icon" onClick={menuToggle} />
                 </div>
             </div>
         </div >

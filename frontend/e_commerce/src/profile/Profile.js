@@ -7,6 +7,8 @@ import FeatureProduct from './ProfileProducts/FeatureProduct'
 import LatestProduct from './ProfileProducts/LatestProduct'
 import OfferProduct from './ProfileProducts/OfferProduct'
 import Testimonial from './ProfileProducts/Testimonial'
+import { Link } from 'react-router-dom';
+
 
 import './style.css';
 const Profile = ({feature,latest, setSingleTitle, setSinglePrice, setSingleUrl}) => {
@@ -20,11 +22,11 @@ const Profile = ({feature,latest, setSingleTitle, setSinglePrice, setSingleUrl})
                         consistecy. Consistant <br /> hard work gains success. greateness
                         will come.
                     </p>
-                        <a href="" className="btn">Explore Now &#8594;</a>
+                    <Link to="/products"><a href="#/" className="btn">Explore Now &#8594;</a></Link>
                         
                     </div>
                     <div className="col-2">
-                        <img src={image1} alt="image" />
+                        <img src={image1} alt="item of Product" />
                     </div>
                 </div>
             </div>
@@ -35,13 +37,13 @@ const Profile = ({feature,latest, setSingleTitle, setSinglePrice, setSingleUrl})
                 <div className="small-container">
                     <div className="row">
                         <div className="col-3">
-                            <img src={category_1} alt="img" />
+                            <img src={category_1} alt="items_type of product" />
                         </div>
                         <div className="col-3">
-                            <img src={category_2} alt="img" />
+                            <img src={category_2} alt="items_type of product" />
                         </div>
                         <div className="col-3">
-                            <img src={category_3} alt="img" />
+                            <img src={category_3} alt="items_type of product" />
                         </div>
                     </div>
                 </div>

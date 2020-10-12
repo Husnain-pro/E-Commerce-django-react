@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from rest_framework import filters, generics
+from rest_framework import filters, generics, permissions
 
-from .models import AllProducts, FeatureProducts, LatestProducts,Cart
-from .serializers import (AllProductsSerializer, FeatureSerializer,
-                          LatestSerializer,CartSerializer)
+from .models import AllProducts, Cart, FeatureProducts, LatestProducts
+from .serializers import (AllProductsSerializer, CartSerializer,
+                          FeatureSerializer, LatestSerializer)
 
 
 class FeatureView(generics.ListCreateAPIView):
@@ -41,12 +41,18 @@ class AllProductViewList(generics.RetrieveUpdateDestroyAPIView):
     queryset = AllProducts.objects.all()
     serializer_class = AllProductsSerializer
 
+
 class CartView(generics.ListCreateAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
-   
+    permission_classes = [
+        permissions.IsAuthenticated
+    ]
 
 
 class CartViewList(generics.RetrieveUpdateDestroyAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
+    permission_classes = [
+        permissions.IsAuthenticated
+    ]

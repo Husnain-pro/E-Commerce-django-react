@@ -25,7 +25,7 @@ const OfferProduct = ({ setSingleTitle, setSinglePrice, setSingleUrl }) => {
                             workout tracking accuracy
                         and is well worth its asking price of Rs. 2,299.<br />
                             </small>
-                            <a href="#" className="btn">Buy Now &#8594;</a>
+                            <a href="#/" className="btn">Buy Now &#8594;</a>
                         </div>
                     </div>
                 </div>

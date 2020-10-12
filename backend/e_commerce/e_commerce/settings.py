@@ -40,7 +40,24 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'product',
+    'blog',
+    'allauth',
+    'allauth.account',
+    'dj_rest_auth.registration',
+    'django.contrib.sites',
+    'dj_rest_auth',
+    'rest_framework.authtoken',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+    )
+}
+SITE_ID = 1
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -129,3 +146,10 @@ CORS_ALLOWED_ORIGINS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mlhlm1212@gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
