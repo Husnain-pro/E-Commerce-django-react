@@ -3,14 +3,14 @@ import "antd/dist/antd.css";
 import React, { useState } from "react";
 import image1 from "../../src/profile/RedStore_Img/images/image1.png";
 import "./style.css";
-const Account = () => {
+const Account = ({ setToken, setUser }) => {
   //account process
 
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [password2, setpassword2] = useState("");
-  const [token, settoken] = useState("");
+  // const [token, settoken] = useState("");
 
   function setUsername(e) {
     setusername(e.target.value);
@@ -117,11 +117,14 @@ const Account = () => {
       };
       fetch("http://127.0.0.1:8000/dj-rest-auth/login/", requestOptions)
         .then((res) => res.json())
-        .then((data) => settoken(data))
+        .then((data) => {
+          setToken(data);
+          setUser(true);
+        })
         .catch((err) => console.log(err));
     }
   }
-  console.log(token);
+  // console.log(token);
 
   return (
     <div className="account-page">
